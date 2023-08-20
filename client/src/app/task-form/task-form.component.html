@@ -1,7 +1,7 @@
-<form class="task-form" autocomplete="off" [formGroup]="taskForm" (ngSubmit)="submitForm()">
-    <div class="form-floating mb-3 form-container">
-        <input class="form-control" type="text" id="name" formControlName="title" placeholder="Title" required>
-        <label for="name">Title</label>
+<form class="task-form form-container" autocomplete="off" [formGroup]="taskForm" (ngSubmit)="submitForm()">
+    <div class="mb-3 text-start">
+        <label class="form-label" for="title">Title</label>
+        <input class="form-control" type="text" id="title" formControlName="title" placeholder="Title" required>
     </div>
 
     <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
@@ -10,17 +10,21 @@
         </div>
     </div>
 
-    <div class="form-floating mb-3">
-        <input class="form-control" type="text" formControlName="dueDate" placeholder="Due Date">
-        <label for="dueDate">Due Date</label>
+    <div class="mb-3 text-start">
+        <label class="form-label" for="dueDate">Due Date</label>
+        <mat-form-field class="form-control">
+            <input matInput [matDatepicker]="datepicker" formControlName="dueDate">
+            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+        </mat-form-field>
     </div>
 
     <div *ngIf="dueDate.invalid && (dueDate.dirty || dueDate.touched)" class="alert alert-danger">
     </div>
 
-    <div class="form-floating mb-3">
+    <div class="mb-3 text-start">
+        <label class="form-label" for="notes">Notes</label>
         <input class="form-control" type="text" formControlName="notes" placeholder="Notes">
-        <label for="notes">Notes</label>
     </div>
 
     <div *ngIf="notes.invalid && (notes.dirty || notes.touched)" class="alert alert-danger">

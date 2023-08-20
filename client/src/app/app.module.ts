@@ -10,10 +10,17 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TaskCardComponent } from './task-card/task-card.component';
 import { FooterDeskComponent } from './footer-desk/footer-desk.component';
 import { FooterCandlesComponent } from './footer-candles/footer-candles.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -24,14 +31,21 @@ import { FooterCandlesComponent } from './footer-candles/footer-candles.componen
     EditTaskComponent,
     TaskCardComponent,
     FooterDeskComponent,
-    FooterCandlesComponent
+    FooterCandlesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatButtonToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

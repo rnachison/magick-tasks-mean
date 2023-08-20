@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-task-card',
-  templateUrl: './task-card.component.html',
-  styleUrls: ['./task-card.component.scss']
+  templateUrl: 'task-card.component.html',
+  styleUrls: ['task-card.component.scss']
 })
 export class TaskCardComponent {
 

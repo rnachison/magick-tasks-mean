@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, window } from 'rxjs';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-tasks-list',
-  templateUrl: './tasks-list.component.html',
-  styleUrls: ['./tasks-list.component.scss']
+  templateUrl: 'tasks-list.component.html',
+  styleUrls: ['tasks-list.component.scss']
 })
 export class TasksListComponent implements OnInit {
 
   tasks$: Observable<Task[]> = new Observable();
 
-  chosenTask!: Task;
-  unChosenTask!: Task;
+  chosenTask: Task = {};
+  unChosenTask: Task = {};
+  rowLength = 0;
 
   constructor(private tasksService: TaskService) { }
 
