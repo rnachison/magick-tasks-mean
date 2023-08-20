@@ -10,6 +10,8 @@ import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TaskCardComponent } from './task-card/task-card.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     TasksListComponent,
     TaskFormComponent,
     AddTaskComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    TaskCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

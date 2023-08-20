@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-body">
+        <div class="front">
+            <img class="symbol" [src]="srcUrl" />
+            <h5 class="card-title task-title">{{task.title}}</h5>
+            <p class="card-text due-date">{{task.symbol}}</p>
+            <p class="card-text task-notes">{{task.notes}}</p>
+            <button class="btn btn-primary me-1" [routerLink]="['edit/', task._id]">Edit</button>
+            <button class="btn btn-danger" (click)="discardTask(task._id || '')">Discard</button>
+        </div>
+    </div>
+</div>

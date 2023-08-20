@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
+import { Symbols } from '../symbols';
 
 @Component({
   selector: 'app-add-task',
@@ -17,6 +18,8 @@ export class AddTaskComponent {
   ) { }
 
   addTask(task: Task) {
+    task.isComplete = false;
+    task.symbol = this.getSymbol();
     this.taskService.createTask(task)
       .subscribe({
         next: () => {
@@ -27,5 +30,9 @@ export class AddTaskComponent {
           console.error(error);
         }
       });
+  }
+
+  getSymbol() {
+    return Math.floor(Math.random() * Symbols.list.length);
   }
 }

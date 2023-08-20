@@ -1,0 +1,12 @@
+<h2 class="text-center m-5">Tasks List</h2>
+<div class="deck-wrapper">
+    <div class="card-deck row">
+        <div class="col card-col" *ngFor="let task of tasks$ | async">
+            <app-task-card [task]="task" (discarded)="onDiscarded($event)">
+
+            </app-task-card>
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Task</button>

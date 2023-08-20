@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+
+/* Breakpoints */
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+/* Color Theme Swatches in Hex */
+$Medieval-Illustrations-1-hex: #025949;
+$Medieval-Illustrations-2-hex: #593D07;
+$Medieval-Illustrations-3-hex: #F29057;
+$Medieval-Illustrations-4-hex: #F2490C;
+$Medieval-Illustrations-5-hex: #8C0F0F;
+
+$gold: #F2B705;
+$blood-red: #8C311C;
+$velvet-red: #590209;
+$purple: #4F3E8C;
+$magic-purple: #4226A6;
+$midnight-purple: #26010B;
+$deep-purple: #40011E;
+$beige: #BF8D50;
+$wood: #473206;
+$magic-orange: #F25D27;
+$day-blue: #0DC4D9;
+$yellow: #F2CB05;
+$moon: #FFD29C;
+$soft-gray: #f2f2f2;
+
+$body-font: 'Inknut Antiqua', serif;
+$title-font: 'Uncial Antiqua', cursive;
+
+$deep-red: #4D0808;
+
+$card-width-int: 225;
+$card-width: 225px;
+$phi: 1.618;
+$card-pull-int: -50;
+$card-pull: -50px;
+$transition: 0.4s ease-out;
+
+$flame-shadow: 0 0 15px #d35400;
+$magic-shadow: 0 0 20px $magic-purple;
