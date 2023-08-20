@@ -17,28 +17,42 @@ export class TaskCardComponent {
   @Output()
   discarded = new EventEmitter();
 
+  @Output()
+  taskEdited = new EventEmitter();
+
   taskForm = new BehaviorSubject({});
 
   constructor(
     private taskService: TaskService,
   ) { }
 
-  ngOnInit() {
-    this.taskForm.next(this.task);
-  }
-
-  getImagePath() {
+  get imagePath() {
     let index = this.task.symbol ? this.task.symbol : 0;
     return `assets/${Symbols.list[index]}.svg`;
   }
 
-  onTaskDiscarded() {
-    this.discarded.emit(this.task._id || '');
+  ngOnInit(): void {
+    this.taskForm.next(this.task);
   }
 
-  editTask(task: Task) {
+  onTaskDiscarded(): void {
+    this.taskService.deleteTask(this.task._id || '').subscribe({
+      next: () => {
+        this.discarded.emit(this.task._id || '');
+      },
+      error: (error) => {
+        alert('Failed to destroy task');
+        console.error(error);
+      }
+    });
+  }
+
+  editTask(task: Task): void {
     this.taskService.updateTask(this.task._id || '', task)
       .subscribe({
+        next: () => {
+          this.taskEdited.emit()
+        },
         error: (error) => {
           alert('Failed to update task');
           console.error(error);

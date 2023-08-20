@@ -30,7 +30,7 @@ export class TaskFormComponent implements OnInit {
   get notes() { return this.taskForm.get('notes')!; }
   get id() { return this.taskForm.get('id')!; }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initialState.subscribe(task => {
       this.taskForm = this.fb.group({
         title: [task.title, [Validators.required]],
@@ -43,11 +43,11 @@ export class TaskFormComponent implements OnInit {
     this.taskForm.valueChanges.subscribe((val) => { this.formValuesChanged.emit(val); });
   }
 
-  submitForm() {
+  submitForm(): void {
     this.formSubmitted.emit(this.taskForm.value);
   }
 
-  discardTask() {
+  discardTask(): void {
     let isConfirm = confirm('Discarding will permanently destroy task');
     if (!isConfirm) {
       return;

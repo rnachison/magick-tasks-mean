@@ -21,18 +21,18 @@ export class TasksListComponent implements OnInit {
     this.fetchTasks();
   }
 
-  onDiscarded(id: string): void {
-    this.tasksService.deleteTask(id).subscribe({
-      next: () => this.fetchTasks()
-    });
+  refreshDeck(): void {
+    this.fetchTasks();
+    this.closeTask();
   }
 
-  chooseTask(task: Task) {
+  chooseTask(task: Task): void {
+    // pull card out of the deck
     this.unChosenTask = {};
     this.chosenTask = task;
   }
 
-  closeTask() {
+  closeTask(): void {
     // put the chosen card back in the deck
     this.unChosenTask = this.chosenTask;
     this.chosenTask = {};
