@@ -12,6 +12,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TaskCardComponent } from './task-card/task-card.component';
+import { FooterDeskComponent } from './footer-desk/footer-desk.component';
+import { FooterCandlesComponent } from './footer-candles/footer-candles.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TaskCardComponent } from './task-card/task-card.component';
     TaskFormComponent,
     AddTaskComponent,
     EditTaskComponent,
-    TaskCardComponent
+    TaskCardComponent,
+    FooterDeskComponent,
+    FooterCandlesComponent
   ],
   imports: [
     BrowserModule,

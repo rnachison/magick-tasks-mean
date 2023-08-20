@@ -1,8 +1,11 @@
-<h2 class="text-center m-5">Tasks List</h2>
+<h2 class="text-center m-5">Magick Tasks</h2>
+<div id="overlay" [ngClass]="{ 'chosen': chosenTask?.title?.length }" (click)="closeTask()">
+</div>
 <div class="deck-wrapper">
     <div class="card-deck row">
         <div class="col card-col" *ngFor="let task of tasks$ | async">
-            <app-task-card [task]="task" (discarded)="onDiscarded($event)">
+            <app-task-card [task]="task" (discarded)="onDiscarded($event)" (click)="chooseTask(task)"
+                [ngClass]="{ 'chosen': task === chosenTask, 'unchosen': task === unChosenTask }">
 
             </app-task-card>
         </div>
@@ -10,3 +13,6 @@
 </div>
 
 <button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Task</button>
+
+<app-footer-candles></app-footer-candles>
+<app-footer-desk></app-footer-desk>

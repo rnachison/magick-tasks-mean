@@ -97,45 +97,6 @@ $animation-transition: 0.8s ease-out;
                 }
             }
 
-
-            &.chosen {
-
-                animation: card-chosen $animation-transition forwards;
-                cursor: auto;
-                pointer-events: none;
-
-                .card-body {
-
-                    .front {
-
-                        animation: front-chosen $animation-transition forwards;
-
-                        .symbol {
-                            animation: none;
-                        }
-                    }
-
-                    .back {
-
-                        animation: back-chosen $animation-transition forwards;
-                        pointer-events: auto;
-                    }
-                }
-            }
-
-            &.unchosen {
-
-                animation: card-unchosen $animation-transition;
-
-                .front {
-                    animation: front-unchosen $animation-transition;
-                }
-
-                .back {
-                    animation: back-unchosen $animation-transition;
-                }
-            }
-
             &.completed {
 
                 .front,
@@ -167,6 +128,50 @@ $animation-transition: 0.8s ease-out;
                         box-shadow: 0 0 2rem $magic-purple;
                         text-shadow: 0 0 2rem $magic-purple;
                     }
+                }
+            }
+        }
+
+        .chosen {
+
+            .card {
+
+                animation: card-chosen $animation-transition forwards;
+                cursor: auto;
+                pointer-events: none;
+
+                .card-body {
+
+                    .front {
+
+                        animation: front-chosen $animation-transition forwards;
+
+                        .symbol {
+                            animation: none;
+                        }
+                    }
+
+                    .back {
+
+                        animation: back-chosen $animation-transition forwards;
+                        pointer-events: auto;
+                    }
+                }
+            }
+        }
+
+        .unchosen {
+
+            .card {
+
+                animation: card-unchosen $animation-transition;
+
+                .front {
+                    animation: front-unchosen $animation-transition;
+                }
+
+                .back {
+                    animation: back-unchosen $animation-transition;
                 }
             }
         }

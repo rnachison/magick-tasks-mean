@@ -7,7 +7,7 @@ import { TaskService } from '../task.service';
 @Component({
   selector: 'app-edit-task.component.ts',
   template: `
-   <h2 class="text-center m-5">Edit an Task</h2>
+   <h2 class="text-center m-5">Edit Task</h2>
    <app-task-form [initialState]="task" (formSubmitted)="editTask($event)"></app-task-form>
  `
 })

@@ -9,7 +9,11 @@ import { TaskService } from '../task.service';
   styleUrls: ['./tasks-list.component.scss']
 })
 export class TasksListComponent implements OnInit {
+
   tasks$: Observable<Task[]> = new Observable();
+
+  chosenTask!: Task;
+  unChosenTask!: Task;
 
   constructor(private tasksService: TaskService) { }
 
@@ -21,6 +25,17 @@ export class TasksListComponent implements OnInit {
     this.tasksService.deleteTask(id).subscribe({
       next: () => this.fetchTasks()
     });
+  }
+
+  chooseTask(task: Task) {
+    this.unChosenTask = {};
+    this.chosenTask = task;
+  }
+
+  closeTask() {
+    // put the chosen card back in the deck
+    this.unChosenTask = this.chosenTask;
+    this.chosenTask = {};
   }
 
   private fetchTasks(): void {

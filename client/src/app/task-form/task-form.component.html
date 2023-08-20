@@ -1,0 +1,32 @@
+<form class="task-form" autocomplete="off" [formGroup]="taskForm" (ngSubmit)="submitForm()">
+    <div class="form-floating mb-3 form-container">
+        <input class="form-control" type="text" id="name" formControlName="title" placeholder="Title" required>
+        <label for="name">Title</label>
+    </div>
+
+    <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger">
+        <div *ngIf="title.errors?.['required']">
+            Title is required.
+        </div>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="dueDate" placeholder="Due Date">
+        <label for="dueDate">Due Date</label>
+    </div>
+
+    <div *ngIf="dueDate.invalid && (dueDate.dirty || dueDate.touched)" class="alert alert-danger">
+    </div>
+
+    <div class="form-floating mb-3">
+        <input class="form-control" type="text" formControlName="notes" placeholder="Notes">
+        <label for="notes">Notes</label>
+    </div>
+
+    <div *ngIf="notes.invalid && (notes.dirty || notes.touched)" class="alert alert-danger">
+    </div>
+    <div class="button-wrapper">
+        <button class="btn save-button" type="submit" [disabled]="taskForm.invalid">Save</button>
+        <button class="btn btn-danger destroy-button" (click)="discardTask()">Discard</button>
+    </div>
+</form>
