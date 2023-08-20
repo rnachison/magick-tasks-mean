@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'styles/_variables';
 @import 'styles/_base';
+@import 'styles/datepicker.scss';
+@import 'app/header/header.component';
+@import 'app/add-task/add-task.component';
 @import 'app/tasks-list/tasks-list.component';
 @import 'app/task-card/task-card.component';
 @import 'app/task-form/task-form.component';
-@import 'app/date-picker/date-picker.component.scss';

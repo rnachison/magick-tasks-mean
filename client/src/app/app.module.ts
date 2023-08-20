@@ -21,6 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { HeaderComponent } from './header/header.component';
+import { CreditsComponent } from './credits/credits.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     TaskCardComponent,
     FooterDeskComponent,
     FooterCandlesComponent,
+    HeaderComponent,
+    CreditsComponent,
   ],
   imports: [
     BrowserModule,

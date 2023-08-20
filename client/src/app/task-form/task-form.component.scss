@@ -41,7 +41,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background: #d35400;
+                    background: $flame;
                     transition: .5s;
                     transform: scale(.9);
                     z-index: -1;
@@ -58,64 +58,28 @@
                         filter: blur(3px);
                     }
                 }
+
+                &:disabled {
+
+                    &:before {
+                        opacity: 0;
+                    }
+                }
             }
 
             &.destroy-button {
                 &:hover {
-                    color: $magic-purple !important;
-                    box-shadow: $magic-shadow;
-                    // text-shadow: $magic-shadow;
+                    color: $gold !important;
+                    box-shadow: $gold-shadow;
+                    text-shadow: $gold-shadow;
 
                     &:before {
                         transform: scale(1.2);
-                        box-shadow: $magic-shadow;
+                        box-shadow: $gold-shadow;
                         filter: blur(3px);
                     }
                 }
             }
         }
-    }
-}
-
-// Material Design Datepicker Styles
-.mat-mdc-form-field-flex {
-    align-items: center;
-}
-
-.cdk-overlay-container {
-    --mat-datepicker-calendar-container-background-color: #8C311C;
-    --mat-datepicker-calendar-period-button-icon-color: #f2b705;
-
-    color: $gold;
-
-    .mat-calendar-controls {
-        margin: 2% calc(4.7142857143% - 16px);
-    }
-
-    .mat-mdc-icon-button {
-        --mdc-icon-button-state-layer-size: 40px;
-    }
-
-    .mat-calendar-previous-button,
-    .mat-calendar-next-button {
-        &:hover {
-            box-shadow: 0 0 15px $gold;
-            text-shadow: 0 0 15px $gold;
-        }
-    }
-
-    .mat-calendar-body-cell {
-        color: $gold;
-
-        .mat-calendar-body-cell-content {
-            height: 85%;
-            width: 85%;
-
-            &:hover {
-                box-shadow: 0 0 15px $gold;
-                text-shadow: 0 0 15px $gold;
-            }
-        }
-
     }
 }

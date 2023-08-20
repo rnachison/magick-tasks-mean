@@ -29,6 +29,7 @@ $day-blue: #0DC4D9;
 $yellow: #F2CB05;
 $moon: #FFD29C;
 $soft-gray: #f2f2f2;
+$flame: #d35400;
 
 $body-font: 'Inknut Antiqua', serif;
 $title-font: 'Uncial Antiqua', cursive;
@@ -42,5 +43,6 @@ $card-pull-int: -50;
 $card-pull: -50px;
 $transition: 0.4s ease-out;
 
-$flame-shadow: 0 0 15px #d35400;
+$flame-shadow: 0 0 15px $flame;
 $magic-shadow: 0 0 20px $magic-purple;
+$gold-shadow: 0 0 20px $gold;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, window } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
 

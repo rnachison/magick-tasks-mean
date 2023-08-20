@@ -1,5 +1,6 @@
 <div id="overlay" [ngClass]="{ 'chosen': chosenTask.title?.length }" (click)="closeTask()">
 </div>
+<app-header></app-header>
 <div class="deck-wrapper">
     <div class="card-deck row">
         <div class="col card-col" *ngFor="let task of tasks$ | async">
@@ -11,8 +12,3 @@
         </div>
     </div>
 </div>
-
-<button class="btn btn-primary mt-3" [routerLink]="['new']">Add a New Task</button>
-
-<app-footer-candles></app-footer-candles>
-<app-footer-desk></app-footer-desk>

@@ -6,10 +6,8 @@ import { Symbols } from '../symbols';
 
 @Component({
   selector: 'app-add-task',
-  template: `
-   <h2 class="text-center m-5">Add a New Task</h2>
-   <app-task-form (formSubmitted)="addTask($event)"></app-task-form>
- `
+  templateUrl: 'add-task.component.html',
+  styleUrls: ['add-task.component.scss']
 })
 export class AddTaskComponent {
   constructor(
@@ -17,7 +15,7 @@ export class AddTaskComponent {
     private taskService: TaskService
   ) { }
 
-  addTask(task: Task) {
+  addTask(task: Task): void {
     task.isComplete = false;
     task.symbol = this.getSymbol();
     this.taskService.createTask(task)
@@ -32,7 +30,11 @@ export class AddTaskComponent {
       });
   }
 
-  getSymbol() {
+  onTaskDiscarded(): void {
+    this.router.navigate(['/tasks']);
+  }
+
+  getSymbol(): number {
     return Math.floor(Math.random() * Symbols.list.length);
   }
 }
