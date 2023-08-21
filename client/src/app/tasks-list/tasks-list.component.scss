@@ -29,7 +29,7 @@
 
     $row-length: var(--row-length);
 
-    padding: 60px 100px 60px 0;
+    padding: 60px 0;
     //calculate for max number of cards
     // width: calc(((#{$card-width} + #{$card-pull}) * (#{$row-length})) - (3 * #{$card-pull}));
 

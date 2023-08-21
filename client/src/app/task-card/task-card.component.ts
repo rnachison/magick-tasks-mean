@@ -14,6 +14,9 @@ export class TaskCardComponent {
   @Input()
   task!: Task;
 
+  @Input()
+  index!: number;
+
   @Output()
   discarded = new EventEmitter();
 

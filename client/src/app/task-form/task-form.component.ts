@@ -12,6 +12,9 @@ export class TaskFormComponent implements OnInit {
   @Input()
   initialState: BehaviorSubject<Task> = new BehaviorSubject({});
 
+  @Input()
+  index: number = 0;
+
   @Output()
   formValuesChanged = new EventEmitter<Task>();
 
@@ -29,6 +32,7 @@ export class TaskFormComponent implements OnInit {
   get dueDate() { return this.taskForm.get('dueDate')!; }
   get notes() { return this.taskForm.get('notes')!; }
   get id() { return this.taskForm.get('id')!; }
+  get isComplete() { return this.taskForm.get('isComplete')!; }
 
   ngOnInit(): void {
     this.initialState.subscribe(task => {
@@ -36,7 +40,8 @@ export class TaskFormComponent implements OnInit {
         title: [task.title, [Validators.required]],
         dueDate: task.dueDate,
         notes: task.notes,
-        id: task._id
+        id: task._id,
+        isComplete: !!task.isComplete
       });
     });
 
@@ -53,5 +58,11 @@ export class TaskFormComponent implements OnInit {
       return;
     }
     this.taskDiscarded.emit(this.id);
+  }
+
+  onStatusChanged(status: boolean) {
+    this.taskForm.patchValue({
+      isComplete: !!status
+    });
   }
 }

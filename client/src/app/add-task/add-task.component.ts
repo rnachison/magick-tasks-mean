@@ -16,7 +16,7 @@ export class AddTaskComponent {
   ) { }
 
   addTask(task: Task): void {
-    task.isComplete = false;
+    task.isComplete = !!task.isComplete;
     task.symbol = this.getSymbol();
     this.taskService.createTask(task)
       .subscribe({

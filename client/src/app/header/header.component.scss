@@ -1,0 +1,31 @@
+  @import '../../styles/_variables';
+
+  .navbar {
+
+      z-index: 50;
+
+      .header-link.btn {
+          background: rgba($moon, .63);
+          margin-left: 10px;
+          padding: 16px 10px;
+          border-radius: 0 0 20px 20px;
+          transform: translateY(-26px);
+          transition: $transition;
+          color: $blood-red;
+          border: none;
+
+          &.home-link {
+              font-family: $title-font;
+              font-size: 1.5em;
+              transform: translateY(-22px);
+          }
+
+          &:hover {
+              transition: $transition;
+              transform: translateY(-20px);
+              color: $purple;
+              box-shadow: $magic-shadow;
+              text-shadow: $magic-shadow;
+          }
+      }
+  }

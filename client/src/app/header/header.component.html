@@ -1,0 +1,24 @@
+<nav class="navbar fixed-top">
+    <button class="header-link home-link btn" [routerLink]="['']">
+        Tasks
+    </button>
+
+    <!-- Right aligned nav items -->
+    <ul class="nav">
+        <li [hidden]="page === 'new'" class="nav-item">
+            <button class="header-link btn" [routerLink]="['/tasks/new']">
+                Add Task
+            </button>
+        </li>
+        <li [hidden]="page === 'credits'" class="nav-item">
+            <button class="header-link btn" [routerLink]="['/credits']">
+                Credits
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="header-link btn">
+                Logout
+            </button>
+        </li>
+    </ul>
+</nav>

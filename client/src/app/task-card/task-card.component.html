@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{ 'completed': !!task.isComplete }">
     <div class="card-body">
         <div class="front">
             <img class="symbol" [src]="imagePath" />
@@ -7,7 +7,7 @@
             <p class="card-text task-notes">{{task.notes}}</p>
         </div>
         <div class="back">
-            <app-task-form [initialState]="taskForm" (formSubmitted)="editTask($event)"
+            <app-task-form [initialState]="taskForm" [index]="index" (formSubmitted)="editTask($event)"
                 (taskDiscarded)="onTaskDiscarded()">
             </app-task-form>
         </div>

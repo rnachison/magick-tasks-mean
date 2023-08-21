@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { HeaderComponent } from './header/header.component';
 import { CreditsComponent } from './credits/credits.component';
+import { CelestialToggleComponent } from './celestial-toggle/celestial-toggle.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CreditsComponent } from './credits/credits.component';
     FooterCandlesComponent,
     HeaderComponent,
     CreditsComponent,
+    CelestialToggleComponent,
   ],
   imports: [
     BrowserModule,

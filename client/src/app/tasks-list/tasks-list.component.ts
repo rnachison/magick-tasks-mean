@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Task } from '../task';
 import { TaskService } from '../task.service';
 
@@ -14,7 +14,7 @@ export class TasksListComponent implements OnInit {
 
   chosenTask: Task = {};
   unChosenTask: Task = {};
-  rowLength = 0;
+  showCompletedTasks: boolean = false;
 
   constructor(private tasksService: TaskService) { }
 
@@ -39,7 +39,14 @@ export class TasksListComponent implements OnInit {
     this.chosenTask = {};
   }
 
+  onStatusChanged(status: boolean) {
+    this.showCompletedTasks = status;
+    this.fetchTasks();
+  }
+
   private fetchTasks(): void {
-    this.tasks$ = this.tasksService.getTasks();
+    this.tasks$ = this.tasksService.getTasks().pipe(
+      map(tasks =>
+        tasks.filter(task => task.isComplete === this.showCompletedTasks)));
   }
 }

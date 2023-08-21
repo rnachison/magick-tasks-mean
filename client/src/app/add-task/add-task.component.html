@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div id="overlay" :class="{ loading: isLoading }">
+    <img src="../assets/hourglass.svg" alt="hourglass" id="hourglass" />
+</div>
+<div class="col col-9">
+    <div class="deck-wrapper">
+        <div class="card-deck">
+            <div class="chosen">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="back">
+                            <app-task-form (formSubmitted)="addTask($event)" (taskDiscarded)="onTaskDiscarded()">
+                            </app-task-form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
