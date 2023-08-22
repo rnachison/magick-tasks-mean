@@ -24,6 +24,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { HeaderComponent } from './header/header.component';
 import { CreditsComponent } from './credits/credits.component';
 import { CelestialToggleComponent } from './celestial-toggle/celestial-toggle.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { CelestialToggleComponent } from './celestial-toggle/celestial-toggle.co
     HeaderComponent,
     CreditsComponent,
     CelestialToggleComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,

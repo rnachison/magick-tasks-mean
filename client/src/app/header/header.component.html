@@ -15,9 +15,9 @@
                 Credits
             </button>
         </li>
-        <li class="nav-item">
-            <button class="header-link btn">
-                Logout
+        <li [hidden]="page === 'login'" class="nav-item">
+            <button class="header-link btn" [routerLink]="['/login']">
+                Login
             </button>
         </li>
     </ul>

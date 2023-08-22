@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.form-container {
+    .alert-info {
+        color: $midnight-purple;
+        background: $moon;
+        border-color: $moon;
+    }
+
+    .btn,
+    .btn:hover {
+        background-color: $magic-orange;
+        border-color: $magic-orange;
+        color: $midnight-purple;
+        margin: 10px;
+    }
+}
