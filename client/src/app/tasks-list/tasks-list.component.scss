@@ -27,42 +27,13 @@
 
 .deck-wrapper {
 
-    $row-length: var(--row-length);
-
     padding: 60px 0;
-    //calculate for max number of cards
-    // width: calc(((#{$card-width} + #{$card-pull}) * (#{$row-length})) - (3 * #{$card-pull}));
-
-    // @media (min-width: $breakpoint-md) {
-    //   width: 500px;
-    // }
-    // @media (min-width: $breakpoint-lg) {
-    //   width: 675px;
-    // }
-    // @media (min-width: $breakpoint-xl) {
-    //   width: 850px;
-    // }
 
     .card-deck {
         margin-left: 50px;
         padding-left: 15px;
-
-        .task-list-enter-active {
-            transition: 0.4s ease-out 0.4s;
-        }
-
-        .task-list-leave-active,
-        .task-list-move {
-            transition: 0.4s ease-out;
-        }
-
-        /* .task-list-leave-active below version 2.1.8 */
-        .task-list-enter,
-        .task-list-leave-to {
-            opacity: 0;
-            width: 0;
-            transform: translateY(50%);
-        }
+        display: flex;
+        flex-wrap: wrap;
 
         .card-col {
             max-width: $card-width;
