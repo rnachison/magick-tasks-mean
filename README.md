@@ -1,4 +1,7 @@
 # Magick Tasks
+A to do list for wizards
+
+![screenshot of the app showing several cards on a desk with lit candles](./client/src/assets/ouroboros.png)
 
 ## Server
 
